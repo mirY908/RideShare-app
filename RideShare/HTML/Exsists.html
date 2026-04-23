@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצטרפות נהג</title>
+  <link rel='stylesheet' type='text/css' media='screen' href='../CSS/Exsists.css'>
+
+</head>
+
+<body>
+
+  <div class="container fade-in-slow">
+    <h1>היי נהג יקר!</h1>
+    <p>לפני שנדליק את המנוע – תזכיר לנו, נפגשנו כבר או שאתה נהג חדש מהניילונים? 😄</p>
+
+    <form action="/check-driver" method="POST">
+      <label for="firstName">שם פרטי</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">שם משפחה</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="phone">מספר טלפון</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="05XXXXXXXX">
+
+      <input type="submit" value="בדוק פרטים" class="submit" id="submit">
+    </form>
+  </div>
+
+  <div id="toastOverlay" class="toast-overlay"></div>
+  <div class="toast"></div>
+
+  <script src='../JS/Exsists.js'></script>
+
+</body>
+
+</html>

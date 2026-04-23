@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>NewDriver</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/AddDrivers.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+    <div class="back-home">
+        <button onclick="location.href='index.html'">⬅️ חזרה לדף הבית</button>
+    </div>
+
+    <div class="floating-elements">
+        <div class="floating-element" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="floating-element" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="floating-element" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="floating-element" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="floating-element" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="floating-element" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="floating-element" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="floating-element" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1><span class="car-icon"></span> הוספת פרטי נהג </h1>
+            <p>מלא את הפרטים שלך כדי להצטרף לקהילת הנסיעות שלנו</p>
+        </div>
+
+        <div class="form-container">
+            <form id="driverForm">
+                <div class="form-grid">
+
+                    <!-- תמונת פרופיל -->
+                    <div class="form-section">
+                        <h3 class="section-title">📸 תמונת פרופיל</h3>
+
+                        <div class="profile-image-section">
+                            <div class="profile-image-container">
+                                <div class="profile-image-preview" id="profilePreview">
+                                    👤
+                                </div>
+                                <div class="profile-image-upload">
+                                    <input type="file" id="profileImage" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="image-upload-text">לחץ על המצלמה להעלאת תמונה</div>
+                        </div>
+                    </div>
+
+                    <!-- פרטים אישיים -->
+                    <div class="form-section">
+                        <h3 class="section-title">👤 פרטים אישיים</h3>
+
+                        <div class="form-group">
+                            <label for="firstName">שם פרטי *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">שם משפחה *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">מספר טלפון *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="050-1234567">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">כתובת מייל</label>
+                            <input type="email" id="email" name="email" required placeholder="example@email.com">
+                        </div>
+                    </div>
+
+                    <!-- פרטי נסיעה -->
+                    <div class="form-section">
+                        <h3 class="section-title">🗺️ פרטי נסיעה</h3>
+
+                        <div class="form-group">
+                            <label for="fromLocation">מאיפה אתה נוסע? *</label>
+                            <input type="text" id="fromLocation" name="fromLocation" required placeholder="עיר/רחוב">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="toLocation">לאן אתה נוסע? *</label>
+                            <input type="text" id="toLocation" name="toLocation" required placeholder="עיר/רחוב">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="seats">כמה מקומות פנויים ברכב? *</label>
+                            <select id="seats" name="seats" required>
+                                <option value="">בחר מספר מקומות</option>
+                                <option value="1">1 מקום</option>
+                                <option value="2">2 מקומות</option>
+                                <option value="3">3 מקומות</option>
+                                <option value="4">4 מקומות</option>
+                                <option value="5">5+ מקומות</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- זמן ותדירות -->
+                    <div class="form-section">
+                        <h3 class="section-title">🕐 זמן ותדירות</h3>
+
+                        <div class="datetime-group">
+                            <div class="form-group">
+                                <label for="date">תאריך *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="time">שעה *</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- הערות נוספות -->
+                    <div class="form-section">
+                        <h3 class="section-title">📝 הערות נוספות</h3>
+
+                        <div class="form-group">
+                            <label for="notes">הערות (אופציונלי)</label>
+                            <textarea id="notes" name="notes" rows="6"
+                                placeholder="הוסף הערות נוספות על הנסיעה - מחיר, תחנות ביניים, העדפות וכו'..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- כפתור שליחה -->
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn" id="submit-btn" onclick="addDriver(event)">
+                        ✨ יצירת פרופיל נהג ✨
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- חלונית קופצת פרופיל נשמר בהצלחה -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>🎉 הפרופיל נוסף בהצלחה!</h2>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src='../JS/AddDrivers.js'></script>
+    <script src='../JS/Exsists.js'></script>
+
+
+</body>
+
+</html>

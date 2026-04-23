@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../CSS/TravelDetails.css'>
+</head>
+
+<body>
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2> הכנס פרטי הזמנה </h2>
+            <form class="booking-form">
+                <div class="form-group">
+                    <input type="text" id="fullname" class="form-input" placeholder="שם מלא:" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phone" class="form-input" placeholder=":טלפון ליצירת קשר" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="fromLocation" class="form-input" placeholder="מאיפה אתה יוצא?" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="toLocation" class="form-input" placeholder="לאן אתה נוסע?" />
+                </div>
+                <div class="form-group">
+                    <input type="date" id="date" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <input type="time" id="time" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <select class="form-input" id="seats">
+                        <option>מספר נוסעים</option>
+                        <option>1 נוסע</option>
+                        <option>2 נוסעים</option>
+                        <option>3 נוסעים</option>
+                        <option>4+ נוסעים</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="text" class="form-input2" placeholder="הערות:" />
+                </div>
+
+                <button type="button" id="submit" class="search-btn"
+                    onclick="location.href='../HTML/SaveInfromation.html'">
+                    ההזמנה הושלמה👍
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div id="toast-container"></div>
+</body>
+
+</html>

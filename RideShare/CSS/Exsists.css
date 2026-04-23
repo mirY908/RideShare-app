@@ -1,0 +1,161 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: backgroundGradientLight 15s ease infinite;
+  background: linear-gradient(270deg, #a8dadc, #caf0f8, #e0f7fa, #a8dadc);
+  background-size: 800% 800%;
+}
+
+@keyframes backgroundGradientLight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* אנימציה */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* עיצוב הדיב והאנימציה */
+.container {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(100, 149, 237, 0.4); 
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(100, 149, 237, 0.15);
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+
+/* הדגשה של כותרת הנהג */
+h1 {
+  font-size: 28px;           
+  font-weight: 900;          
+  color: #002244;            
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+}
+
+p {
+  font-size: 18px;
+  color: rgba(34, 68, 102, 0.85); 
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+  line-height: 1.4;
+}
+
+
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: #003366;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #cce0ff;
+  border-radius: 6px;
+  background-color: #f9fbff;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 280px;
+  max-width: 90%;
+  background: #ffffffee;
+  color: #1a237e;
+  text-align: center;
+  border-radius: 12px;
+  padding: 20px 30px;
+  position: fixed;
+  z-index: 1001;
+  left: 50%;
+  top: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #4fc3f7;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 30%) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.toast-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.toast-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
